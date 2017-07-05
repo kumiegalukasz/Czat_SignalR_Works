@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "ChatView";
+}
+
+<h2>ChatView</h2>
+
+        <div class="modal__content chat">
+            <div class="modal__sidebar">
+                <div class="chat__search search">
+                    <div class="search">
+                        <div class="search__icon">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                        <input type="search" class="search__input" placeholder="Lista osób">
+                        <div class="search__icon search__icon_right">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat__users">
+                    <ul id="user" class="users"></ul>
+                </div>
+            </div>
+            <div class="modal__main">
+                <div class="chatbox">
+                    <div class="chatbox__row">
+                        <div class="head">
+                            <div class="head__avatar avatar avatar_larger">
+                                <a href="#" class="avatar__wrap">
+                                    M
+                                </a>
+                            </div>
+                            <div class="head__title">Czat</div>
+                        </div>
+                    </div>
+                    <div class="chatbox__row chatbox__row_fullheight">
+                        <ul id="message"></ul>
+                    </div>
+                    <div class="chatbox__row">
+                        <div class="enter">
+                            <div class="enter__submit">
+                                <button id="send" class="button button_id_submit" type="submit">
+                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div  class="enter__textarea">
+                                <textarea id="txt" name="enterMessage" @*id="enterMessage"*@ cols="30" rows="2" placeholder="Say message..."></textarea>
+                            </div>
+                            <div class="enter__icons">
+                                <a href="#" class="enter__icon">
+                                    <i class="fa fa-paperclip" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="enter__icon">
+                                    <i class="fa fa-smile-o" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+@section scripts{
+    <script src="~/Scripts/jquery.signalR-2.2.2.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script src="~/app/app.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+}
+
+<h2 id="hitCounter"></h2>
